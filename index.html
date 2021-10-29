@@ -8,7 +8,7 @@
   <title>EZPizza</title>
 </head>
 <body>
-  <div class="container">
+  <div class="container" id="bodyContainer">
     <h1 class="display-1">Welcome to EZPizza!</h1>
     <p>Pizza ordering and delivery made easy. Think about us your Amazon, but for pizza</p>
     <hr>
@@ -34,20 +34,28 @@
         </div>
         <div class="form-group">
           <label for="toppings" class="display-4">Please select the toppings you would like on your pizza:</label>
-          <select class="form-control" id="toppings">
-            <option id="pepperoni" value="1">Pepperoni</option>
-            <option id="mushrooms" value="2">Mushrooms</option>
-            <option id="bacon" value="3">Bacon</option>
-            <option id="extra-cheese" value="4">Extra cheese</option>
-            <option id="green-peppers" value="5">Green peppers</option>
-            <option id="pineapple" value="6">Pineapple</option>
-            <option id="chicken" value="7">Chicken</option>
-            <option id="beef" value="8">Beef</option>
-          </select>
+          <div class="form-control" id="toppings">
+            <input type="checkbox" id="pepperoni" /> Pepperoni
+            <br>
+            <input type="checkbox" id="mushrooms" /> Mushrooms
+            <br>
+            <input type="checkbox" id="bacon" /> Bacon
+            <br>
+            <input type="checkbox" id="extraCheese" /> Extra Cheese
+            <br>
+            <input type="checkbox" id="greenPeppers" /> Green Peppers
+            <br>
+            <input type="checkbox" id="pineapple" /> Pineapple
+            <br>
+            <input type="checkbox" id="chicken" /> Chicken
+            <br>
+            <input type="checkbox" id="beef" /> Beef
+          </div>
         </div>
       </div>
       <span id="newPizza" class="btn btn-danger">Add another pizza</span>
 
       <button type="submit" id="dataSubmit" class="btn btn-primary">Order pizza(s)</button>
     </form>
+    
   </div>
