@@ -10,7 +10,7 @@
 <body>
   <div class="container" id="bodyContainer">
     <h1 class="display-1">Welcome to EZPizza!</h1>
-    <p>Pizza ordering and delivery made easy. Think about us your Amazon, but for pizza</p>
+    <p>Pizza ordering and delivery made easy. Think about us like Amazon, but for pizza</p>
     <hr>
     <h1 class="display-1">Portal</h1>
     <form id="pizzaInput">
@@ -26,36 +26,45 @@
         <div class="form-group">
           <label for="crustType" class="display-4">Please select the type of crust you would like:</label>
           <select class="form-control" id="crustType">
-            <option id="stuffed" value="1">Stuffed Crust <blockquote>Stuffed crust pizza is pizza topped with cheese and glazed with garlic and herb sauce and then rolled around mozzarella.</blockquote></option>
-            <option id="flatBread" value="2">Flat Bread Crust <blockquote>The flatbread crust is a lighter, thin pizza crust often eaten as an appetizer. It has become incredibly popular over the past couple of years especially as more people look for more health conscious kind of pizzas.</blockquote></option>
-            <option id="thin" value="3">Thin Crust <blockquote>Thin crust pizzas are characterized by a crunchy edge and a slightly slimmer center where cheese, sauce and other ingredients are placed. To get this kind of crust you have to stretch out the dough until it forms edges. Fair warning though, this kind of pizza can only accommodate not so many toppings.</blockquote></option>
-            <option id="thick" value="4">Thick Crust <blockquote>The thick crust pizza is a pizza that typically ranges between 1/8 to ¼ inches in thickness. It is generally rolled out on a board and molded into shape in the pan used to bake it to make it as thick as possible.</blockquote></option>
+            <option id="stuffed" value="1">Stuffed Crust</option>
+            <option id="flatBread" value="2">Flat Bread Crust</option>
+            <option id="thin" value="3">Thin Crust</option>
+            <option id="thick" value="4">Thick Crust</option>
           </select>
         </div>
         <div class="form-group">
           <label for="toppings" class="display-4">Please select the toppings you would like on your pizza:</label>
-          <div class="form-control" id="toppings">
-            <input type="checkbox" id="pepperoni" /> Pepperoni
+          <div id="toppings">
+            <input class="" type="checkbox" id="pepperoni" /> Pepperoni
             <br>
-            <input type="checkbox" id="mushrooms" /> Mushrooms
+            <input class="" type="checkbox" id="mushrooms" /> Mushrooms
             <br>
-            <input type="checkbox" id="bacon" /> Bacon
+            <input class="" type="checkbox" id="bacon" /> Bacon
             <br>
-            <input type="checkbox" id="extraCheese" /> Extra Cheese
+            <input class="" type="checkbox" id="extraCheese" /> Extra Cheese
             <br>
-            <input type="checkbox" id="greenPeppers" /> Green Peppers
+            <input class="" type="checkbox" id="greenPeppers" /> Green Peppers
             <br>
-            <input type="checkbox" id="pineapple" /> Pineapple
+            <input class="" type="checkbox" id="pineapple" /> Pineapple
             <br>
-            <input type="checkbox" id="chicken" /> Chicken
+            <input class="" type="checkbox" id="chicken" /> Chicken
             <br>
-            <input type="checkbox" id="beef" /> Beef
+            <input class="" type="checkbox" id="beef" /> Beef
           </div>
         </div>
       </div>
       <span id="newPizza" class="btn btn-danger">Add another pizza</span>
 
-      <button type="submit" id="dataSubmit" class="btn btn-primary">Order pizza(s)</button>
+      <button type="submit" id="pizzaSubmit" class="btn btn-primary">Order pizza(s)</button>
     </form>
-    
+    <h3 class="display-3">Checkout page</h3>
+    <br>
+    <div id="orderForm">
+      <div class="form-group">
+        <input class="form-control" type="radio" id="yesDelivery" name="deliveryOption" /> Yes
+        <input class="form-control" type="radio" id="noDelivery" name="deliveryOption" /> No
+        <input class="form-control" type="text" placeholder="Lavington, Riara Rd..." id="locationInput" />
+      </div>
+      <button type="submit" id="deliverySubmit" class="btn btn-primary">Confirm</button>
+    </div>
   </div>
