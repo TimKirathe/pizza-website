@@ -22,8 +22,23 @@ var smPine = 30;
 var smChick = 55;
 var smBeef = 80;
 
-var medPep =
+var medPep = 60;
+var medBac = 80;
+var medMush = 90;
+var medChee = 60;
+var medGrePepp = 70;
+var medPine = 50;
+var medChick = 75;
+var medBeef = 100;
 
+var larPep = 80;
+var larBac = 100;
+var larMush = 110;
+var larChee = 80;
+var larGrePepp = 90;
+var larPine = 70;
+var larChick = 95;
+var larBeef = 120;
 
 
 // User Interface
@@ -81,7 +96,6 @@ $(document).ready(function() {
       if (checkboxField[i].checked) {
         pizzaOrdered.toppings.push(checkboxField[i].value);
         console.log(pizzaOrdered.toppings);
-        /*alert("The selected option was " + checkboxField[i].value);*/
       }
     }
     $("#orderForm").show(600, "linear");
