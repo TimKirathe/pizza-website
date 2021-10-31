@@ -128,12 +128,40 @@ $(document).ready(function() {
         totalPizzaCost += thickCrust
       }
       /*alert(totalPizzaCost);*/
-      
-      var jsdelivr = document.forms[1].deliveryOption;
-      console.log(jsdelivr);
-      if (jsdelivr.value === "No") {
-        $("#costOutput").text("Your total cost will be ");
+      if (pizzaSize === "1") {
+        for (var j=0; j<pizzaOrdered.toppings.length; i++) {
+          if (pizzaOrdered.toppings[j] === "pepperoni") {
+            totalPizzaCost += smPep
+          }
+          else if (pizzaOrdered.toppings[j] === "mushrooms") {
+            totalPizzaCost += smMush
+          }
+          else if (pizzaOrdered.toppings[j] === "bacon") {
+            totalPizzaCost += smBac
+          }
+          else if (pizzaOrdered.toppings[j] === "extraCheese") {
+            totalPizzaCost += smChee
+          }
+          else if (pizzaOrdered.toppings[j] === "greenPeppers") {
+            totalPizzaCost += smGrePepp
+          }
+          else if (pizzaOrdered.toppings[j] === "pineapple") {
+            totalPizzaCost += smPine
+          }
+          else if (pizzaOrdered.toppings[j] === "chicken") {
+            totalPizzaCost += smChick
+          }
+          else if (pizzaOrdered.toppings[j] === "bacon") {
+            totalPizzaCost += smBac
+          }
+        }
+        alert(totalPizzaCost);
       }
     });
+    var jsdelivr = document.forms[1].deliveryOption;
+    console.log(jsdelivr);
+    if (jsdelivr.value === "No") {
+        $("#costOutput").text("Your total cost will be ");
+    }
   });
 });
