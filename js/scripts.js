@@ -4,7 +4,25 @@ function NewPizza(size, crust) {
   this.crust = crust;
   this.toppings = [];
 }
+var smallPizza = 150;
+var mediumPizza = 300;
+var largePizza = 450;
 
+var stuffedCrust = 110;
+var flatBreadCrust = 70;
+var thinCrust = 50;
+var thickCrust = 80;
+
+var smPep = 40;
+var smBac = 60;
+var smMush = 70;
+var smChee = 40;
+var smGrePepp = 50;
+var smPine = 30;
+var smChick = 55;
+var smBeef = 80;
+
+var medPep =
 
 
 
@@ -72,6 +90,9 @@ $(document).ready(function() {
 
       var jsdelivr = document.forms[1].deliveryOption;
       console.log(jsdelivr);
+      if (jsdelivr.value === "No") {
+        $("#costOutput").text("Your total cost will be ");
+      }
     });
   });
 });
