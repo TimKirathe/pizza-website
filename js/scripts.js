@@ -66,6 +66,12 @@ $(document).ready(function() {
         /*alert("The selected option was " + checkboxField[i].value);*/
       }
     }
-    $(".checkoutPage").show(600, "linear");
+    $("#orderForm").show(600, "linear");
+    $("#location").submit(function(event2) {
+      event2.preventDefault();
+
+      var jsdelivr = document.forms[1].deliveryOption;
+      console.log(jsdelivr);
+    });
   });
 });
