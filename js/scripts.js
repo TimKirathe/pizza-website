@@ -105,26 +105,26 @@ $(document).ready(function() {
       event2.preventDefault();
 
       var totalPizzaCost = 0;
-      if (pizzaSize === "1") {
+      if (pizzaOrdered.size === "1") {
         totalPizzaCost += smallPizza
       }
-      else if (pizzaSize === "2") {
+      else if (pizzaOrdered.size === "2") {
         totalPizzaCost += mediumPizza
       }
-      else if (pizzaSize === "3") {
+      else if (pizzaOrdered.size === "3") {
         totalPizzaCost += largePizza
       }
       /*alert(totalPizzaCost);*/
-      if (pizzaCrust === "1") {
+      if (pizzaOrdered.crust === "1") {
         totalPizzaCost += stuffedCrust
       }
-      else if (pizzaCrust === "2") {
+      else if (pizzaOrdered.crust === "2") {
         totalPizzaCost += flatBreadCrust
       }
-      else if (pizzaCrust === "3") {
+      else if (pizzaOrdered.crust === "3") {
         totalPizzaCost += thinCrust
       }
-      else if (pizzaCrust = "4") {
+      else if (pizzaOrdered.crust = "4") {
         totalPizzaCost += thickCrust
       }
       /*alert(totalPizzaCost);*/
@@ -155,7 +155,62 @@ $(document).ready(function() {
             totalPizzaCost += smBac
           }
         }
-        alert(totalPizzaCost);
+      }
+      else if (pizzaSize === "2") {
+        for (var j=0; j<pizzaOrdered.toppings.length; i++) {
+          if (pizzaOrdered.toppings[j] === "pepperoni") {
+              totalPizzaCost += medPep
+          }
+          else if (pizzaOrdered.toppings[j] === "mushrooms") {
+            totalPizzaCost += medMush
+          }
+          else if (pizzaOrdered.toppings[j] === "bacon") {
+            totalPizzaCost += medBac
+          }
+          else if (pizzaOrdered.toppings[j] === "extraCheese") {
+            totalPizzaCost += medChee
+          }
+          else if (pizzaOrdered.toppings[j] === "greenPeppers") {
+            totalPizzaCost += medGrePepp
+          }
+          else if (pizzaOrdered.toppings[j] === "pineapple") {
+            totalPizzaCost += medPine
+          }
+          else if (pizzaOrdered.toppings[j] === "chicken") {
+            totalPizzaCost += medChick
+          }
+          else if (pizzaOrdered.toppings[j] === "bacon") {
+            totalPizzaCost += medBac
+          }
+        }
+      }
+      else if (pizzaSize === "3") {
+        for (var j=0; j<pizzaOrdered.toppings.length; i++) {
+          if (pizzaOrdered.toppings[j] === "pepperoni") {
+            totalPizzaCost += larPep
+          }
+          else if (pizzaOrdered.toppings[j] === "mushrooms") {
+            totalPizzaCost += larMush
+          }
+          else if (pizzaOrdered.toppings[j] === "bacon") {
+            totalPizzaCost += larBac
+          }
+          else if (pizzaOrdered.toppings[j] === "extraCheese") {
+            totalPizzaCost += larChee
+          }
+          else if (pizzaOrdered.toppings[j] === "greenPeppers") {
+            totalPizzaCost += larGrePepp
+          }
+          else if (pizzaOrdered.toppings[j] === "pineapple") {
+            totalPizzaCost += larPine
+          }
+          else if (pizzaOrdered.toppings[j] === "chicken") {
+            totalPizzaCost += larChick
+          }
+          else if (pizzaOrdered.toppings[j] === "bacon") {
+            totalPizzaCost += larBac
+          }
+        }
       }
     });
     var jsdelivr = document.forms[1].deliveryOption;
