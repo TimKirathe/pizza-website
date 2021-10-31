@@ -1,3 +1,33 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+html body {
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+.checkoutPage {
+  display: none;
+}
+.head1 {
+  font-size: 4rem;
+  text-align: center;
+}
+p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+#toppings {
+  font-size: 1.5rem;
+}
+#crustType, #pizzaSize {
+  font-size: 1.5rem;
+}
+
 #bodyContainer {
   grid-template-columns: repeat(2, 1fr 1fr);
+  grid-template-rows: repeat(1, auto;)
 }
