@@ -92,16 +92,25 @@ $(document).ready(function() {
     var pizzaOrdered = new NewPizza(pizzaSize, pizzaCrust);
     var checkboxField = document.forms[0].topping;
     console.log(checkboxField, typeof(checkboxField));
+
     for (var i=0; i<checkboxField.length; i++) {
       if (checkboxField[i].checked) {
         pizzaOrdered.toppings.push(checkboxField[i].value);
         console.log(pizzaOrdered.toppings);
       }
     }
-    $("#orderForm").show(600, "linear");
+
+    $("#orderForm").show(300, "linear");
     $("#location").submit(function(event2) {
       event2.preventDefault();
 
+      var totalPizzaCost = 0;
+      if (pizzaSize === 1) {
+        totalPizzaCost = smallPizza
+      }
+      else if (pizzaSize === 2) {
+        totalPizzaCost
+      }
       var jsdelivr = document.forms[1].deliveryOption;
       console.log(jsdelivr);
       if (jsdelivr.value === "No") {
