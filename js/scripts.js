@@ -105,12 +105,30 @@ $(document).ready(function() {
       event2.preventDefault();
 
       var totalPizzaCost = 0;
-      if (pizzaSize === 1) {
-        totalPizzaCost = smallPizza
+      if (pizzaSize === "1") {
+        totalPizzaCost += smallPizza
       }
-      else if (pizzaSize === 2) {
-        totalPizzaCost
+      else if (pizzaSize === "2") {
+        totalPizzaCost += mediumPizza
       }
+      else if (pizzaSize === "3") {
+        totalPizzaCost += largePizza
+      }
+      /*alert(totalPizzaCost);*/
+      if (pizzaCrust === "1") {
+        totalPizzaCost += stuffedCrust
+      }
+      else if (pizzaCrust === "2") {
+        totalPizzaCost += flatBreadCrust
+      }
+      else if (pizzaCrust === "3") {
+        totalPizzaCost += thinCrust
+      }
+      else if (pizzaCrust = "4") {
+        totalPizzaCost += thickCrust
+      }
+      /*alert(totalPizzaCost);*/
+      
       var jsdelivr = document.forms[1].deliveryOption;
       console.log(jsdelivr);
       if (jsdelivr.value === "No") {
