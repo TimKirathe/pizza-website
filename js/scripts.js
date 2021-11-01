@@ -11,8 +11,9 @@ function Pizza(size, crust) {
 
 var numberOfPizzas = 1;
 
-var pizzaSize = [];
-var pizzaCrust = [];
+var pizzaSizes = [];
+var pizzaCrusts = [];
+var pizzaToppings = [];
 
 var deliveryCost = 200;
 
@@ -110,26 +111,22 @@ $(document).ready(function() {
     event.preventDefault();
 
       $(".pizzaSize").each(function() {
-        pizzaSize.push($(this).val());
-        console.log(pizzaSize);
+        pizzaSizes.push($(this).val());
+        console.log(pizzaSizes);
       });
 
     $(".crustType").each(function() {
-      pizzaCrust.push($(this).val());
-      console.log(pizzaCrust);
+      pizzaCrusts.push($(this).val());
+      console.log(pizzaCrusts);
     });
-
-    var pizzaOrdered = new NewPizza(pizzaSize);
-    pizzaOrdered.crust.push(pizzaCrust);
-    console.log(pizzaOrdered.crust);
 
       var checkboxField = document.forms[0].topping;
       console.log(checkboxField, typeof(checkboxField));
 
       for (var i=0; i<checkboxField.length; i++) {
         if (checkboxField[i].checked) {
-          pizzaOrdered.toppings.push(checkboxField[i].value);
-          console.log(pizzaOrdered.toppings);
+          pizzaToppings.push(checkboxField[i].value);
+          console.log(pizzaToppings);
         }
       }
 
@@ -139,30 +136,32 @@ $(document).ready(function() {
         event.preventDefault();
 
         var totalPizzaCost = 0;
-        for (var h=0; h<pizzaOrdered.crust.length; h++) {
-        if (pizzaOrdered.size === "1") {
+        for (var h=0; h<numberOfPizzas; h++) {
+        if (pizzaSizes[h] === "1") {
           totalPizzaCost += smallPizza
         }
-        else if (pizzaOrdered.size === "2") {
+        else if (pizzaSizes[h] === "2") {
           totalPizzaCost += mediumPizza
         }
-        else if (pizzaOrdered.size === "3") {
+        else if (pizzaSizes[h] === "3") {
           totalPizzaCost += largePizza
         }
-        if (pizzaOrdered.crust[h] === "Stuffed Crust") {
+        console.log(totalPizzaCost);
+        if (pizzaCrusts[h] === "Stuffed Crust") {
           totalPizzaCost += stuffedCrust
         }
-        else if (pizzaOrdered.crust[h] === "Flat Bread Crust") {
+        else if (pizzaCrusts[h] === "Flat Bread Crust") {
           totalPizzaCost += flatBreadCrust
         }
-        else if (pizzaOrdered.crust[h] === "Thin Crust") {
+        else if (pizzaCrusts[h] === "Thin Crust") {
           totalPizzaCost += thinCrust
         }
-        else if (pizzaOrdered.crust[h] === "Thick Crust") {
+        else if (pizzaCrusts[h] === "Thick Crust") {
           totalPizzaCost += thickCrust
         }
+        console.log(totalPizzaCost);
       }
-      console.log(pizzaOrdered.crust);
+      console.log(totalPizzaCost);
         for (var j=0; j<pizzaOrdered.toppings.length; j++) {
           if (pizzaOrdered.size === "1" && pizzaOrdered.toppings[j] === "pepperoni") {
             totalPizzaCost += smPep
