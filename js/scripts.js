@@ -1,7 +1,7 @@
 // Business Logic
-function NewPizza(size, crust) {
+function NewPizza(size) {
   this.size = size;
-  this.crust = crust;
+  this.crust = [];
   this.toppings = [];
 }
 
@@ -57,7 +57,7 @@ $(document).ready(function() {
     '<label for="pizzaSize" class="display-6">Please select your pizza size:</label>' +
     '<br>' +
     '<br>' +
-    '<select class="form-control" class="pizzaSize">' +
+    '<select class="form-control pizzaSize">' +
     '<option value="1">Small</option>' +
     '<option value="2">Medium</option>' +
     '<option value="3">Large</option>' +
@@ -67,11 +67,11 @@ $(document).ready(function() {
     '<br>' +
     '<div class="form-group box2">' +
     '<label for="crustType" class="display-6">Please select the type of crust you would like:</label>' +
-    '<select class="form-control" class="crustType">' +
-    '<option value="1">Stuffed Crust</option>' +
-    '<option value="2">Flat Bread Crust</option>' +
-    '<option value="3">Thin Crust</option>' +
-    '<option value="4">Thick Crust</option>' +
+    '<select class="form-control crustType">' +
+    '<option value="Stuffed Crust">Stuffed Crust</option>' +
+    '<option value="Flat Bread Crust">Flat Bread Crust</option>' +
+    '<option value="Thin Crust">Thin Crust</option>' +
+    '<option value="Thin Crust">Thick Crust</option>' +
     '</select>' +
     '</div>' +
     '<br>' +
@@ -101,14 +101,15 @@ $(document).ready(function() {
   });
   $("#pizzaInput").submit(function(event) {
     event.preventDefault();
-    console.log(document.forms.length);
 
     $("#pizzas").each(function() {
 
     var pizzaSize = $(this).find(".pizzaSize").val();
-    var pizzaCrust = $(this).find(".crustType").val();
+    /*var pizzaCrust = $(this).find(".crustType").val();*/
 
-    var pizzaOrdered = new NewPizza(pizzaSize, pizzaCrust);
+    var pizzaOrdered = new NewPizza(pizzaSize);
+    pizzaOrdered.crust.push($(this).find(".crustType").val());
+    console.log(pizzaOrdered.crust);
 
       var checkboxField = document.forms[0].topping;
       console.log(checkboxField, typeof(checkboxField));
@@ -126,6 +127,7 @@ $(document).ready(function() {
         event.preventDefault();
 
         var totalPizzaCost = 0;
+        for (var h=0; h<pizzaOrdered.crust.length; h++) {
         if (pizzaOrdered.size === "1") {
           totalPizzaCost += smallPizza
         }
@@ -135,18 +137,20 @@ $(document).ready(function() {
         else if (pizzaOrdered.size === "3") {
           totalPizzaCost += largePizza
         }
-        if (pizzaOrdered.crust === "Stuffed Crust") {
+        if (pizzaOrdered.crust[h] === "Stuffed Crust") {
           totalPizzaCost += stuffedCrust
         }
-        else if (pizzaOrdered.crust === "Flat Bread Crust") {
+        else if (pizzaOrdered.crust[h] === "Flat Bread Crust") {
           totalPizzaCost += flatBreadCrust
         }
-        else if (pizzaOrdered.crust === "Thin Crust") {
+        else if (pizzaOrdered.crust[h] === "Thin Crust") {
           totalPizzaCost += thinCrust
         }
-        else if (pizzaOrdered.crust = "Thick Crust") {
+        else if (pizzaOrdered.crust[h] === "Thick Crust") {
           totalPizzaCost += thickCrust
         }
+      }
+      console.log(pizzaOrdered.crust);
         for (var j=0; j<pizzaOrdered.toppings.length; j++) {
           if (pizzaOrdered.size === "1" && pizzaOrdered.toppings[j] === "pepperoni") {
             totalPizzaCost += smPep
