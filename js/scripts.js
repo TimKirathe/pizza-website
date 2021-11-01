@@ -216,6 +216,7 @@ $(document).ready(function() {
           totalPizzaCost += deliveryCost;
           $("#costOutput").text("Dear Esteemed Customer, your total cost will be ksh " + totalPizzaCost.toString() + ". Your order will be delivered to your location.");
         }
+        $("#")
       });
     });
   });

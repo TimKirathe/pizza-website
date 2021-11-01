@@ -68,7 +68,7 @@
 
       <button type="submit" id="pizzaSubmit" class="btn btn-primary">Order pizza(s)</button>
     </form>
-    <h1 class="head1">Checkout page</h1>
+    <h1 class="head1" id="checkoutHeading">Checkout page</h1>
     <form id="location">
       <div id="orderForm">
         <p>Would you like your pizza delivered to your location? There will be an additional cost of ksh 200</p>
@@ -83,5 +83,11 @@
         <button type="submit" id="deliverySubmit" class="btn btn-primary orderForm">Confirm</button>
       </div>
     </form>
+    <div id="summary">
+      <h4>Your summary</h4>
+      <p id="numOfPizzas"></p>
+      <p id="crustChosen"></p>
+      <p id="toppingsChosen"></p>
+    </div>
     <p id="costOutput"></p>
   </div>
