@@ -18,49 +18,51 @@
     <h1 class="head1">Portal</h1>
     <form id="pizzaInput">
       <div id="pizzas">
-        <div class="form-group box1">
-          <label for="pizzaSize" class="display-6">Please select your pizza size:</label>
+        <div class="layoutPage">
+          <div class="form-group box1">
+            <label for="pizzaSize" class="display-6">Please select your pizza size:</label>
+            <br>
+            <br>
+            <select class="form-control" class="pizzaSize">
+              <option value="1">Small</option>
+              <option value="2">Medium</option>
+              <option value="3">Large</option>
+            </select>
+          </div>
           <br>
           <br>
-          <select class="form-control" id="pizzaSize">
-            <option id="small" value="1">Small</option>
-            <option id="medium" value="2">Medium</option>
-            <option id="large" value="3">Large</option>
-          </select>
-        </div>
-        <br>
-        <br>
-        <div class="form-group box2">
-          <label for="crustType" class="display-6">Please select the type of crust you would like:</label>
+          <div class="form-group box2">
+            <label for="crustType" class="display-6">Please select the type of crust you would like:</label>
+            <br>
+            <br>
+            <select class="form-control" class="crustType">
+              <option value="Stuffed Crust">Stuffed Crust</option>
+              <option value="Flat Bread Crust">Flat Bread Crust</option>
+              <option value="Thin Crust">Thin Crust</option>
+              <option value="Thick Crust">Thick Crust</option>
+            </select>
+          </div>
           <br>
           <br>
-          <select class="form-control" id="crustType">
-            <option id="stuffed" value="Stuffed Crust">Stuffed Crust</option>
-            <option id="flatBread" value="Flat Bread Crust">Flat Bread Crust</option>
-            <option id="thin" value="Thin Crust">Thin Crust</option>
-            <option id="thick" value="Thick Crust">Thick Crust</option>
-          </select>
-        </div>
-        <br>
-        <br>
-        <div class="form-group box3">
-          <label for="toppings" class="display-6">Please select the toppings you would like on your pizza:</label>
-          <div id="toppings">
-            <input name="topping" type="checkbox" value="pepperoni" class="toppingsDisplayed" /> Pepperoni
-            <br>
-            <input name="topping" type="checkbox" value="mushrooms" class="toppingsDisplayed" /> Mushrooms
-            <br>
-            <input name="topping" type="checkbox" value="bacon" class="toppingsDisplayed" /> Bacon
-            <br>
-            <input name="topping" type="checkbox" value="extraCheese" class="toppingsDisplayed" /> Extra Cheese
-            <br>
-            <input name="topping" type="checkbox" value="greenPeppers" class="toppingsDisplayed" /> Green Peppers
-            <br>
-            <input name="topping" type="checkbox" value="pineapple" class="toppingsDisplayed" /> Pineapple
-            <br>
-            <input name="topping" type="checkbox" value="chicken" class="toppingsDisplayed" /> Chicken
-            <br>
-            <input name="topping" type="checkbox" value="beef" class="toppingsDisplayed" /> Beef
+          <div class="form-group box3">
+            <label for="toppings" class="display-6">Please select the toppings you would like on your pizza:</label>
+            <div class="toppings">
+              <input name="topping" type="checkbox" value="pepperoni" class="toppingsDisplayed" /> Pepperoni
+              <br>
+              <input name="topping" type="checkbox" value="mushrooms" class="toppingsDisplayed" /> Mushrooms
+              <br>
+              <input name="topping" type="checkbox" value="bacon" class="toppingsDisplayed" /> Bacon
+              <br>
+              <input name="topping" type="checkbox" value="extraCheese" class="toppingsDisplayed" /> Extra Cheese
+              <br>
+              <input name="topping" type="checkbox" value="greenPeppers" class="toppingsDisplayed" /> Green Peppers
+              <br>
+              <input name="topping" type="checkbox" value="pineapple" class="toppingsDisplayed" /> Pineapple
+              <br>
+              <input name="topping" type="checkbox" value="chicken" class="toppingsDisplayed" /> Chicken
+              <br>
+              <input name="topping" type="checkbox" value="beef" class="toppingsDisplayed" /> Beef
+            </div>
           </div>
         </div>
       </div>
@@ -85,9 +87,9 @@
     </form>
     <div id="summary">
       <h1 class="head1">Your summary</h4>
-      <p id="numOfPizzas"></p>
-      <p id="crustChosen"></p>
-      <p id="toppingsChosen"></p>
+        <p id="numOfPizzas"></p>
+        <p id="crustChosen"></p>
+        <p id="toppingsChosen"></p>
+      </div>
+      <p id="costOutput"></p>
     </div>
-    <p id="costOutput"></p>
-  </div>

@@ -10,28 +10,31 @@ html body {
   box-sizing: border-box;
   background-color: #e3e4fa;
 }
+.container {
+  width: 90%;
+}
 #orderForm, #checkoutHeading, #summary {
   display: none;
 }
 .head1 {
   font-size: 4rem;
   text-align: center;
+  text-shadow: 0rem 0.6rem 0.5rem grey;
+  font-weight: 600;
 }
 p {
   font-size: 1.5rem;
   text-align: center;
+  font-weight: 600;
 }
 .options {
   font-size: 1.5rem;
 }
-#toppings {
+.toppings {
   font-size: 1.5rem;
 }
-#crustType, #pizzaSize {
+.crustType, .pizzaSize {
   font-size: 1.5rem;
-}
-label {
-  text-align: center;
 }
 .box1 {
   background-color: #f8f8ff;
@@ -59,4 +62,7 @@ label {
 }
 button {
   margin: 0.7rem;
+}
+#yesDelivery, #noDelivery, #locationInput {
+  margin-left: 0.5rem;
 }

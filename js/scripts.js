@@ -52,57 +52,61 @@ $(document).ready(function() {
     numberOfPizzas += 1;
     $("#pizzas").append('<br>' +
     '<br>' +
-    '<div class="form-group">' +
+    '<div class="layoutPage">' +
+    '<div class="form-group box1">' +
     '<label for="pizzaSize" class="display-6">Please select your pizza size:</label>' +
     '<br>' +
     '<br>' +
-    '<select class="form-control" id="pizzaSize">' +
-    '<option id="small" value="1">Small</option>' +
-    '<option id="medium" value="2">Medium</option>' +
-    '<option id="large" value="3">Large</option>' +
+    '<select class="form-control" class="pizzaSize">' +
+    '<option value="1">Small</option>' +
+    '<option value="2">Medium</option>' +
+    '<option value="3">Large</option>' +
     '</select>' +
     '</div>' +
     '<br>' +
     '<br>' +
-    '<div class="form-group">' +
+    '<div class="form-group box2">' +
     '<label for="crustType" class="display-6">Please select the type of crust you would like:</label>' +
-    '<select class="form-control" id="crustType">' +
-    '<option id="stuffed" value="1">Stuffed Crust</option>' +
-    '<option id="flatBread" value="2">Flat Bread Crust</option>' +
-    '<option id="thin" value="3">Thin Crust</option>' +
-    '<option id="thick" value="4">Thick Crust</option>' +
+    '<select class="form-control" class="crustType">' +
+    '<option value="1">Stuffed Crust</option>' +
+    '<option value="2">Flat Bread Crust</option>' +
+    '<option value="3">Thin Crust</option>' +
+    '<option value="4">Thick Crust</option>' +
     '</select>' +
     '</div>' +
     '<br>' +
     '<br>' +
-    '<div class="form-group">' +
+    '<div class="form-group box3">' +
     '<label for="toppings" class="display-6">Please select the toppings you would like on your pizza:</label>' +
-    '<div id="toppings">' +
-    '<input class="" type="checkbox" id="pepperoni" /> Pepperoni' +
+    '<div class="toppings">' +
+    '<input class="toppingsDisplayed" type="checkbox" value="pepperoni" name="topping" /> Pepperoni' +
     '<br>' +
-    '<input class="" type="checkbox" id="mushrooms" /> Mushrooms' +
+    '<input class="toppingsDisplayed" type="checkbox" value="mushrooms" name="topping" /> Mushrooms' +
     '<br>' +
-    '<input class="" type="checkbox" id="bacon" /> Bacon' +
+    '<input class="toppingsDisplayed" type="checkbox" value="bacon" name="topping" /> Bacon' +
     '<br>' +
-    '<input class="" type="checkbox" id="extraCheese" /> Extra Cheese' +
+    '<input class="toppingsDisplayed" type="checkbox" value="extraCheese" name="topping" /> Extra Cheese' +
     '<br>' +
-    '<input class="" type="checkbox" id="greenPeppers" /> Green Peppers' +
+    '<input class="toppingsDisplayed" type="checkbox" value="greenPeppers" name="topping" /> Green Peppers' +
     '<br>' +
-    '<input class="" type="checkbox" id="pineapple" /> Pineapple' +
+    '<input class="toppingsDisplayed" type="checkbox" value="pineapple" name="topping" /> Pineapple' +
     '<br>' +
-    '<input class="" type="checkbox" id="chicken" /> Chicken' +
+    '<input class="toppingsDisplayed" type="checkbox" value="chicken" name="topping" /> Chicken' +
     '<br>' +
-    '<input class="" type="checkbox" id="beef" /> Beef' +
+    '<input class="toppingsDisplayed" type="checkbox" value="beef" name="topping" /> Beef' +
+    '</div>' +
+    '</div>' +
     '</div>' +
     '</div>');
   });
   $("#pizzaInput").submit(function(event) {
     event.preventDefault();
+    console.log(document.forms.length);
 
     $("#pizzas").each(function() {
 
-    var pizzaSize = $(this).find("#pizzaSize").val();
-    var pizzaCrust = $(this).find("#crustType").val();
+    var pizzaSize = $(this).find(".pizzaSize").val();
+    var pizzaCrust = $(this).find(".crustType").val();
 
     var pizzaOrdered = new NewPizza(pizzaSize, pizzaCrust);
 
