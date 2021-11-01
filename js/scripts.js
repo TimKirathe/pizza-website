@@ -4,6 +4,9 @@ function NewPizza(size, crust) {
   this.crust = crust;
   this.toppings = [];
 }
+
+var deliveryCost = 200;
+
 var smallPizza = 150;
 var mediumPizza = 300;
 var largePizza = 450;
@@ -100,7 +103,7 @@ $(document).ready(function() {
       }
     }
 
-    $("#orderForm").show(300, "linear");
+    $(".orderForm").show(300, "linear");
     $("#location").submit(function(event2) {
       event2.preventDefault();
 
@@ -128,7 +131,7 @@ $(document).ready(function() {
         totalPizzaCost += thickCrust
       }
       /*alert(totalPizzaCost);*/
-      if (pizzaSize === "1") {
+      /*if (pizzaOrdered.size === "1") {
         for (var j=0; j<pizzaOrdered.toppings.length; i++) {
           if (pizzaOrdered.toppings[j] === "pepperoni") {
             totalPizzaCost += smPep
@@ -156,7 +159,7 @@ $(document).ready(function() {
           }
         }
       }
-      else if (pizzaSize === "2") {
+      else if (pizzaOrdered.size === "2") {
         for (var j=0; j<pizzaOrdered.toppings.length; i++) {
           if (pizzaOrdered.toppings[j] === "pepperoni") {
               totalPizzaCost += medPep
@@ -184,7 +187,7 @@ $(document).ready(function() {
           }
         }
       }
-      else if (pizzaSize === "3") {
+      else if (pizzaOrdered.size === "3") {
         for (var j=0; j<pizzaOrdered.toppings.length; i++) {
           if (pizzaOrdered.toppings[j] === "pepperoni") {
             totalPizzaCost += larPep
@@ -211,12 +214,17 @@ $(document).ready(function() {
             totalPizzaCost += larBac
           }
         }
+      }*/
+      var jsdelivr = document.forms[1].deliveryOption;
+      console.log(jsdelivr);
+      if (jsdelivr.value === "No") {
+        $("#costOutput").text("Your total cost will be ksh. " + totalPizzaCost.toString());
+      }
+      else if (jsdelivr.value === "Yes") {
+        $(".location-entry").show(300, "linear");
+        totalPizzaCost += deliveryCost;
+        $("#costOutput").text("Your total cost will be ksh " + totalPizzaCost.toString());
       }
     });
-    var jsdelivr = document.forms[1].deliveryOption;
-    console.log(jsdelivr);
-    if (jsdelivr.value === "No") {
-        $("#costOutput").text("Your total cost will be ");
-    }
   });
 });
