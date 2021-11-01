@@ -5,6 +5,8 @@ function NewPizza(size, crust) {
   this.toppings = [];
 }
 
+var numberOfPizzas = 1;
+
 var deliveryCost = 200;
 
 var smallPizza = 150;
@@ -47,6 +49,7 @@ var larBeef = 120;
 // User Interface
 $(document).ready(function() {
   $("#newPizza").click(function() {
+    numberOfPizzas += 1;
     $("#pizzas").append('<div class="form-group">' +
     '<label for="pizzaSize" class="display-6">Please select your pizza size:</label>' +
     '<select class="form-control" id="pizzaSize">' +
@@ -105,6 +108,7 @@ $(document).ready(function() {
         }
       }
 
+      $("#checkoutHeading").show(300, "linear");
       $("#orderForm").show(300, "linear");
       $("#location").submit(function(event) {
         event.preventDefault();
@@ -120,16 +124,16 @@ $(document).ready(function() {
           totalPizzaCost += largePizza
         }
         /*alert(totalPizzaCost);*/
-        if (pizzaOrdered.crust === "1") {
+        if (pizzaOrdered.crust === "Stuffed Crust") {
           totalPizzaCost += stuffedCrust
         }
-        else if (pizzaOrdered.crust === "2") {
+        else if (pizzaOrdered.crust === "Flat Bread Crust") {
           totalPizzaCost += flatBreadCrust
         }
-        else if (pizzaOrdered.crust === "3") {
+        else if (pizzaOrdered.crust === "Thin Crust") {
           totalPizzaCost += thinCrust
         }
-        else if (pizzaOrdered.crust = "4") {
+        else if (pizzaOrdered.crust = "Thick Crust") {
           totalPizzaCost += thickCrust
         }
         for (var j=0; j<pizzaOrdered.toppings.length; j++) {
@@ -216,7 +220,10 @@ $(document).ready(function() {
           totalPizzaCost += deliveryCost;
           $("#costOutput").text("Dear Esteemed Customer, your total cost will be ksh " + totalPizzaCost.toString() + ". Your order will be delivered to your location.");
         }
-        $("#")
+        $("#summary").show(300, "linear");
+        $("#numOfPizzas").text("Number of pizzas: " + numberOfPizzas.toString());
+        $("#crustChosen").text("Crust(s) chosen: " + pizzaOrdered.crust);
+        $("#toppingsChosen").text("Topping(s) chosen: " + pizzaOrdered.toppings);
       });
     });
   });

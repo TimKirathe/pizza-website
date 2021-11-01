@@ -29,8 +29,3 @@ p {
 #crustType, #pizzaSize {
   font-size: 1.5rem;
 }
-
-#bodyContainer {
-  grid-template-columns: repeat(2, 1fr 1fr);
-  grid-template-rows: repeat(1, auto;)
-}
