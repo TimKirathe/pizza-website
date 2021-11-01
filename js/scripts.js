@@ -1,11 +1,18 @@
 // Business Logic
-function NewPizza(size) {
-  this.size = size;
-  this.crust = [];
+function Pizzas() {
+  this.sizes = [];
+  this.crusts = [];
   this.toppings = [];
+}
+function Pizza(size, crust) {
+  this.size = size;
+  this.crust = crust;
 }
 
 var numberOfPizzas = 1;
+
+var pizzaSize = [];
+var pizzaCrust = [];
 
 var deliveryCost = 200;
 
@@ -96,19 +103,24 @@ $(document).ready(function() {
     '<input class="toppingsDisplayed" type="checkbox" value="beef" name="topping" /> Beef' +
     '</div>' +
     '</div>' +
-    '</div>' +
     '</div>');
   });
+
   $("#pizzaInput").submit(function(event) {
     event.preventDefault();
 
-    $("#pizzas").each(function() {
+      $(".pizzaSize").each(function() {
+        pizzaSize.push($(this).val());
+        console.log(pizzaSize);
+      });
 
-    var pizzaSize = $(this).find(".pizzaSize").val();
-    /*var pizzaCrust = $(this).find(".crustType").val();*/
+    $(".crustType").each(function() {
+      pizzaCrust.push($(this).val());
+      console.log(pizzaCrust);
+    });
 
     var pizzaOrdered = new NewPizza(pizzaSize);
-    pizzaOrdered.crust.push($(this).find(".crustType").val());
+    pizzaOrdered.crust.push(pizzaCrust);
     console.log(pizzaOrdered.crust);
 
       var checkboxField = document.forms[0].topping;
@@ -240,7 +252,6 @@ $(document).ready(function() {
         $("#crustChosen").text("Crust(s) chosen: " + pizzaOrdered.crust);
         $("#toppingsChosen").text("Topping(s) chosen: " + pizzaOrdered.toppings);
       });
-    });
-    $("#pizzaInput")[0].reset();
+    /*$("#pizzaInput")[0].reset();*/
   });
 });
