@@ -95,129 +95,128 @@ $(document).ready(function() {
     var pizzaOrdered = new NewPizza(pizzaSize, pizzaCrust);
     $("#pizzas").each(function() {
 
-    var checkboxField = document.forms[0].topping;
-    console.log(checkboxField, typeof(checkboxField));
+      var checkboxField = document.forms[0].topping;
+      console.log(checkboxField, typeof(checkboxField));
 
-    for (var i=0; i<checkboxField.length; i++) {
-      if (checkboxField[i].checked) {
-        pizzaOrdered.toppings.push(checkboxField[i].value);
-        console.log(pizzaOrdered.toppings);
-      }
-    }
-
-    $("#orderForm").show(300, "linear");
-    $("#location").submit(function(event) {
-      event.preventDefault();
-
-      var totalPizzaCost = 0;
-      if (pizzaOrdered.size === "1") {
-        totalPizzaCost += smallPizza
-      }
-      else if (pizzaOrdered.size === "2") {
-        totalPizzaCost += mediumPizza
-      }
-      else if (pizzaOrdered.size === "3") {
-        totalPizzaCost += largePizza
-      }
-      /*alert(totalPizzaCost);*/
-      if (pizzaOrdered.crust === "1") {
-        totalPizzaCost += stuffedCrust
-      }
-      else if (pizzaOrdered.crust === "2") {
-        totalPizzaCost += flatBreadCrust
-      }
-      else if (pizzaOrdered.crust === "3") {
-        totalPizzaCost += thinCrust
-      }
-      else if (pizzaOrdered.crust = "4") {
-        totalPizzaCost += thickCrust
-      }
-      alert(pizzaOrdered.toppings[0]);
-      for (var j=0; j<pizzaOrdered.toppings.length; j++) {
-        if (pizzaOrdered.size === "1" && pizzaOrdered.toppings[j] === "pepperoni") {
-          totalPizzaCost += smPep
-        }
-        else if (pizzaOrdered.size === "1" && pizzaOrdered.toppings[j] === "mushrooms") {
-          totalPizzaCost += smMush
-        }
-        else if (pizzaOrdered.size === "1" && pizzaOrdered.toppings[j] === "bacon") {
-          totalPizzaCost += smBac
-        }
-        else if (pizzaOrdered.size === "1" && pizzaOrdered.toppings[j] === "extraCheese") {
-          totalPizzaCost += smChee
-        }
-        else if (pizzaOrdered.size === "1" && pizzaOrdered.toppings[j] === "greenPeppers") {
-          totalPizzaCost += smGrePepp
-        }
-        else if (pizzaOrdered.size === "1" && pizzaOrdered.toppings[j] === "pineapple") {
-          totalPizzaCost += smPine
-        }
-        else if (pizzaOrdered.size === "1" && pizzaOrdered.toppings[j] === "chicken") {
-          totalPizzaCost += smChick
-        }
-        else if (pizzaOrdered.size === "1" && pizzaOrdered.toppings[j] === "bacon") {
-          totalPizzaCost += smBac
-        }
-        else if (pizzaOrdered.size === "2" && pizzaOrdered.toppings[j] === "pepperoni") {
-          totalPizzaCost += medPep
-        }
-        else if (pizzaOrdered.size === "2" && pizzaOrdered.toppings[j] === "mushrooms") {
-          totalPizzaCost += medMush
-        }
-        else if (pizzaOrdered.size === "2" && pizzaOrdered.toppings[j] === "bacon") {
-          totalPizzaCost += medBac
-        }
-        else if (pizzaOrdered.size === "2" && pizzaOrdered.toppings[j] === "extraCheese") {
-          totalPizzaCost += medChee
-        }
-        else if (pizzaOrdered.size === "2" && pizzaOrdered.toppings[j] === "greenPeppers") {
-          totalPizzaCost += medGrePepp
-        }
-        else if (pizzaOrdered.size === "2" && pizzaOrdered.toppings[j] === "pineapple") {
-          totalPizzaCost += medPine
-        }
-        else if (pizzaOrdered.size === "2" && pizzaOrdered.toppings[j] === "chicken") {
-          totalPizzaCost += medChick
-        }
-        else if (pizzaOrdered.size === "2" && pizzaOrdered.toppings[j] === "bacon") {
-          totalPizzaCost += medBac
-        }
-        else if (pizzaOrdered.size === "3" && pizzaOrdered.toppings[j] === "pepperoni") {
-          totalPizzaCost += larPep
-        }
-        else if (pizzaOrdered.size === "3" && pizzaOrdered.toppings[j] === "mushrooms") {
-          totalPizzaCost += larMush
-        }
-        else if (pizzaOrdered.size === "3" && pizzaOrdered.toppings[j] === "bacon") {
-          totalPizzaCost += larBac
-        }
-        else if (pizzaOrdered.size === "3" && pizzaOrdered.toppings[j] === "extraCheese") {
-          totalPizzaCost += larChee
-        }
-        else if (pizzaOrdered.size === "3" && pizzaOrdered.toppings[j] === "greenPeppers") {
-          totalPizzaCost += larGrePepp
-        }
-        else if (pizzaOrdered.size === "3" && pizzaOrdered.toppings[j] === "pineapple") {
-          totalPizzaCost += larPine
-        }
-        else if (pizzaOrdered.size === "3" && pizzaOrdered.toppings[j] === "chicken") {
-          totalPizzaCost += larChick
-        }
-        else if (pizzaOrdered.size === "3" && pizzaOrdered.toppings[j] === "bacon") {
-          totalPizzaCost += larBac
+      for (var i=0; i<checkboxField.length; i++) {
+        if (checkboxField[i].checked) {
+          pizzaOrdered.toppings.push(checkboxField[i].value);
+          console.log(pizzaOrdered.toppings);
         }
       }
 
-      var jsdelivr = document.forms[1].deliveryOption;
-      console.log(jsdelivr);
-      if (jsdelivr.value === "No") {
-        $("#costOutput").text("Your total cost will be ksh. " + totalPizzaCost.toString());
-      }
-      else if (jsdelivr.value === "Yes") {
-        totalPizzaCost += deliveryCost;
-        $("#costOutput").text("Your total cost will be ksh " + totalPizzaCost.toString());
-      }
+      $("#orderForm").show(300, "linear");
+      $("#location").submit(function(event) {
+        event.preventDefault();
+
+        var totalPizzaCost = 0;
+        if (pizzaOrdered.size === "1") {
+          totalPizzaCost += smallPizza
+        }
+        else if (pizzaOrdered.size === "2") {
+          totalPizzaCost += mediumPizza
+        }
+        else if (pizzaOrdered.size === "3") {
+          totalPizzaCost += largePizza
+        }
+        /*alert(totalPizzaCost);*/
+        if (pizzaOrdered.crust === "1") {
+          totalPizzaCost += stuffedCrust
+        }
+        else if (pizzaOrdered.crust === "2") {
+          totalPizzaCost += flatBreadCrust
+        }
+        else if (pizzaOrdered.crust === "3") {
+          totalPizzaCost += thinCrust
+        }
+        else if (pizzaOrdered.crust = "4") {
+          totalPizzaCost += thickCrust
+        }
+        for (var j=0; j<pizzaOrdered.toppings.length; j++) {
+          if (pizzaOrdered.size === "1" && pizzaOrdered.toppings[j] === "pepperoni") {
+            totalPizzaCost += smPep
+          }
+          else if (pizzaOrdered.size === "1" && pizzaOrdered.toppings[j] === "mushrooms") {
+            totalPizzaCost += smMush
+          }
+          else if (pizzaOrdered.size === "1" && pizzaOrdered.toppings[j] === "bacon") {
+            totalPizzaCost += smBac
+          }
+          else if (pizzaOrdered.size === "1" && pizzaOrdered.toppings[j] === "extraCheese") {
+            totalPizzaCost += smChee
+          }
+          else if (pizzaOrdered.size === "1" && pizzaOrdered.toppings[j] === "greenPeppers") {
+            totalPizzaCost += smGrePepp
+          }
+          else if (pizzaOrdered.size === "1" && pizzaOrdered.toppings[j] === "pineapple") {
+            totalPizzaCost += smPine
+          }
+          else if (pizzaOrdered.size === "1" && pizzaOrdered.toppings[j] === "chicken") {
+            totalPizzaCost += smChick
+          }
+          else if (pizzaOrdered.size === "1" && pizzaOrdered.toppings[j] === "bacon") {
+            totalPizzaCost += smBac
+          }
+          else if (pizzaOrdered.size === "2" && pizzaOrdered.toppings[j] === "pepperoni") {
+            totalPizzaCost += medPep
+          }
+          else if (pizzaOrdered.size === "2" && pizzaOrdered.toppings[j] === "mushrooms") {
+            totalPizzaCost += medMush
+          }
+          else if (pizzaOrdered.size === "2" && pizzaOrdered.toppings[j] === "bacon") {
+            totalPizzaCost += medBac
+          }
+          else if (pizzaOrdered.size === "2" && pizzaOrdered.toppings[j] === "extraCheese") {
+            totalPizzaCost += medChee
+          }
+          else if (pizzaOrdered.size === "2" && pizzaOrdered.toppings[j] === "greenPeppers") {
+            totalPizzaCost += medGrePepp
+          }
+          else if (pizzaOrdered.size === "2" && pizzaOrdered.toppings[j] === "pineapple") {
+            totalPizzaCost += medPine
+          }
+          else if (pizzaOrdered.size === "2" && pizzaOrdered.toppings[j] === "chicken") {
+            totalPizzaCost += medChick
+          }
+          else if (pizzaOrdered.size === "2" && pizzaOrdered.toppings[j] === "bacon") {
+            totalPizzaCost += medBac
+          }
+          else if (pizzaOrdered.size === "3" && pizzaOrdered.toppings[j] === "pepperoni") {
+            totalPizzaCost += larPep
+          }
+          else if (pizzaOrdered.size === "3" && pizzaOrdered.toppings[j] === "mushrooms") {
+            totalPizzaCost += larMush
+          }
+          else if (pizzaOrdered.size === "3" && pizzaOrdered.toppings[j] === "bacon") {
+            totalPizzaCost += larBac
+          }
+          else if (pizzaOrdered.size === "3" && pizzaOrdered.toppings[j] === "extraCheese") {
+            totalPizzaCost += larChee
+          }
+          else if (pizzaOrdered.size === "3" && pizzaOrdered.toppings[j] === "greenPeppers") {
+            totalPizzaCost += larGrePepp
+          }
+          else if (pizzaOrdered.size === "3" && pizzaOrdered.toppings[j] === "pineapple") {
+            totalPizzaCost += larPine
+          }
+          else if (pizzaOrdered.size === "3" && pizzaOrdered.toppings[j] === "chicken") {
+            totalPizzaCost += larChick
+          }
+          else if (pizzaOrdered.size === "3" && pizzaOrdered.toppings[j] === "bacon") {
+            totalPizzaCost += larBac
+          }
+        }
+
+        var jsdelivr = document.forms[1].deliveryOption;
+        console.log(jsdelivr);
+        if (jsdelivr.value === "No") {
+          $("#costOutput").text("Dear Esteemed Customer, your total cost will be ksh. " + totalPizzaCost.toString());
+        }
+        else if (jsdelivr.value === "Yes") {
+          totalPizzaCost += deliveryCost;
+          $("#costOutput").text("Dear Esteemed Customer, your total cost will be ksh " + totalPizzaCost.toString() + ". Your order will be delivered to your location.");
+        }
+      });
     });
-  });
   });
 });
