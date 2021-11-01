@@ -50,14 +50,20 @@ var larBeef = 120;
 $(document).ready(function() {
   $("#newPizza").click(function() {
     numberOfPizzas += 1;
-    $("#pizzas").append('<div class="form-group">' +
+    $("#pizzas").append('<br>' +
+    '<br>' +
+    '<div class="form-group">' +
     '<label for="pizzaSize" class="display-6">Please select your pizza size:</label>' +
+    '<br>' +
+    '<br>' +
     '<select class="form-control" id="pizzaSize">' +
     '<option id="small" value="1">Small</option>' +
     '<option id="medium" value="2">Medium</option>' +
     '<option id="large" value="3">Large</option>' +
     '</select>' +
     '</div>' +
+    '<br>' +
+    '<br>' +
     '<div class="form-group">' +
     '<label for="crustType" class="display-6">Please select the type of crust you would like:</label>' +
     '<select class="form-control" id="crustType">' +
@@ -67,6 +73,8 @@ $(document).ready(function() {
     '<option id="thick" value="4">Thick Crust</option>' +
     '</select>' +
     '</div>' +
+    '<br>' +
+    '<br>' +
     '<div class="form-group">' +
     '<label for="toppings" class="display-6">Please select the toppings you would like on your pizza:</label>' +
     '<div id="toppings">' +
@@ -91,12 +99,12 @@ $(document).ready(function() {
   $("#pizzaInput").submit(function(event) {
     event.preventDefault();
 
-    var pizzaSize = $("#pizzaSize").val();
-    /*alert(pizzaSize);*/
-    var pizzaCrust = $("#crustType").val();
-    /*alert(pizzaCrust);*/
-    var pizzaOrdered = new NewPizza(pizzaSize, pizzaCrust);
     $("#pizzas").each(function() {
+
+    var pizzaSize = $(this).find("#pizzaSize").val();
+    var pizzaCrust = $(this).find("#crustType").val();
+
+    var pizzaOrdered = new NewPizza(pizzaSize, pizzaCrust);
 
       var checkboxField = document.forms[0].topping;
       console.log(checkboxField, typeof(checkboxField));
@@ -123,7 +131,6 @@ $(document).ready(function() {
         else if (pizzaOrdered.size === "3") {
           totalPizzaCost += largePizza
         }
-        /*alert(totalPizzaCost);*/
         if (pizzaOrdered.crust === "Stuffed Crust") {
           totalPizzaCost += stuffedCrust
         }

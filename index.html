@@ -18,7 +18,7 @@
     <h1 class="head1">Portal</h1>
     <form id="pizzaInput">
       <div id="pizzas">
-        <div class="form-group">
+        <div class="form-group box1">
           <label for="pizzaSize" class="display-6">Please select your pizza size:</label>
           <br>
           <br>
@@ -30,7 +30,7 @@
         </div>
         <br>
         <br>
-        <div class="form-group">
+        <div class="form-group box2">
           <label for="crustType" class="display-6">Please select the type of crust you would like:</label>
           <br>
           <br>
@@ -43,24 +43,24 @@
         </div>
         <br>
         <br>
-        <div class="form-group">
+        <div class="form-group box3">
           <label for="toppings" class="display-6">Please select the toppings you would like on your pizza:</label>
           <div id="toppings">
-            <input name="topping" type="checkbox" value="pepperoni" /> Pepperoni
+            <input name="topping" type="checkbox" value="pepperoni" class="toppingsDisplayed" /> Pepperoni
             <br>
-            <input name="topping" type="checkbox" value="mushrooms" /> Mushrooms
+            <input name="topping" type="checkbox" value="mushrooms" class="toppingsDisplayed" /> Mushrooms
             <br>
-            <input name="topping" type="checkbox" value="bacon" /> Bacon
+            <input name="topping" type="checkbox" value="bacon" class="toppingsDisplayed" /> Bacon
             <br>
-            <input name="topping" type="checkbox" value="extraCheese" /> Extra Cheese
+            <input name="topping" type="checkbox" value="extraCheese" class="toppingsDisplayed" /> Extra Cheese
             <br>
-            <input name="topping" type="checkbox" value="greenPeppers" /> Green Peppers
+            <input name="topping" type="checkbox" value="greenPeppers" class="toppingsDisplayed" /> Green Peppers
             <br>
-            <input name="topping" type="checkbox" value="pineapple" /> Pineapple
+            <input name="topping" type="checkbox" value="pineapple" class="toppingsDisplayed" /> Pineapple
             <br>
-            <input name="topping" type="checkbox" value="chicken" /> Chicken
+            <input name="topping" type="checkbox" value="chicken" class="toppingsDisplayed" /> Chicken
             <br>
-            <input name="topping" type="checkbox" value="beef" /> Beef
+            <input name="topping" type="checkbox" value="beef" class="toppingsDisplayed" /> Beef
           </div>
         </div>
       </div>
@@ -71,13 +71,13 @@
     <h1 class="head1" id="checkoutHeading">Checkout page</h1>
     <form id="location">
       <div id="orderForm">
-        <p>Would you like your pizza delivered to your location? There will be an additional cost of ksh 200.</p>
+        <p>Would you like your pizza(s) delivered to your location? There will be an additional cost of ksh 200.</p>
         <div class="form-group">
           <input value="Yes" type="radio" id="yesDelivery" name="deliveryOption" /> <span class="options">Yes</span>
           <br>
           <input value="No" type="radio" id="noDelivery" name="deliveryOption" /> <span class="options">No</span>
         </div>
-        <div class="form-group">
+        <div class="form-group box5">
           <input class="form-control" type="text" placeholder="Lavington, Riara Rd..." id="locationInput" />
         </div>
         <button type="submit" id="deliverySubmit" class="btn btn-primary orderForm">Confirm</button>

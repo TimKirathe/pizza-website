@@ -8,6 +8,7 @@ html body {
   font-size: 62.5%;
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
+  background-color: #e3e4fa;
 }
 #orderForm, #checkoutHeading, #summary {
   display: none;
@@ -28,4 +29,34 @@ p {
 }
 #crustType, #pizzaSize {
   font-size: 1.5rem;
+}
+label {
+  text-align: center;
+}
+.box1 {
+  background-color: #f8f8ff;
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+  box-shadow: -0.3rem 0.3rem 0.5rem grey;
+}
+.box2 {
+  background-color: #f8f8ff;
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+  box-shadow: -0.3rem 0.3rem 0.5rem grey;
+}
+.box3 {
+  background-color: #f8f8ff;
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+  box-shadow: -0.3rem 0.3rem 0.5rem grey;
+}
+#orderForm {
+  background-color: #f8f8ff;
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+  box-shadow: -0.3rem 0.3rem 0.5rem grey;
+}
+button {
+  margin: 0.7rem;
 }
