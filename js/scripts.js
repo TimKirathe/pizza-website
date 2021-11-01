@@ -241,5 +241,6 @@ $(document).ready(function() {
         $("#toppingsChosen").text("Topping(s) chosen: " + pizzaOrdered.toppings);
       });
     });
+    $("#pizzaInput")[0].reset();
   });
 });
