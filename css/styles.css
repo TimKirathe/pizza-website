@@ -9,10 +9,7 @@ html body {
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
 }
-.orderForm {
-  display: none;
-}
-.location-entry {
+#orderForm {
   display: none;
 }
 .head1 {

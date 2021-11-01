@@ -70,18 +70,18 @@
     </form>
     <h1 class="head1">Checkout page</h1>
     <form id="location">
-      <div class="orderForm">
+      <div id="orderForm">
         <p>Would you like your pizza delivered to your location? There will be an additional cost of ksh 200</p>
         <div class="form-group">
           <input value="Yes" type="radio" id="yesDelivery" name="deliveryOption" /> <span class="options">Yes</span>
           <br>
           <input value="No" type="radio" id="noDelivery" name="deliveryOption" /> <span class="options">No</span>
         </div>
+        <div class="form-group">
+          <input class="form-control" type="text" placeholder="Lavington, Riara Rd..." id="locationInput" />
+        </div>
+        <button type="submit" id="deliverySubmit" class="btn btn-primary orderForm">Confirm</button>
       </div>
-      <div class="form-group location-entry">
-        <input class="form-control" type="text" placeholder="Lavington, Riara Rd..." id="locationInput" />
-      </div>
-      <button type="submit" id="deliverySubmit" class="btn btn-primary orderForm">Confirm</button>
     </form>
     <p id="costOutput"></p>
   </div>
