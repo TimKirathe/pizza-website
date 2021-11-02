@@ -188,6 +188,7 @@ $(document).ready(function() {
       $("#incrementOutputs").append($("#crustChosen").text("Crust chosen: " + pizzaCrusts));
       $("#incrementOutputs").append($("#toppingsChosen").text("Topping(s) chosen: " + pizzaToppings));
 
+      $("#location")[0].reset();
     });
 
     $("#pizzaInput")[0].reset();
