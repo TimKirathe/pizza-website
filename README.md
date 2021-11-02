@@ -10,7 +10,9 @@ Pizza Ordering and Delivery Website
 
 ##### Setup Instructions and Installation
 
-- Fork this repository into your own GitHub account using the link: ``
+- Fork this repository into your own GitHub account using the link: `https://github.com/TimKirathe/pizza-website`
+- Clone the remote repository into a local repository on your laptop using the `git clone` command on your terminal.
+- Open the index.html file on your browser.
 
 
 ## Development
