@@ -11,7 +11,7 @@
   <title>EZPizza</title>
 </head>
 <body>
-  <div class="container" id="bodyContainer">
+  <div class="container">
     <h1 class="head1">Welcome to EZPizza!</h1>
     <p>Pizza ordering and delivery made easy. Think about us like Amazon, but for pizza</p>
     <hr>
@@ -64,9 +64,13 @@
               <input name="topping" type="checkbox" value="beef" class="toppingsDisplayed" /> Beef
             </div>
           </div>
+          <br>
+          <div class="form-group box4">
+            <label for="noofPizzas" class="display-6">Number of Pizzas you would like?</label>
+            <input type="number" name="numOfPizza" class="form-control" placeholder="1" id="numberOfPizzasInput" required/>
+          </div>
         </div>
       </div>
-      <span id="newPizza" class="btn btn-danger">Add another pizza</span>
 
       <button type="submit" id="pizzaSubmit" class="btn btn-primary">Order pizza(s)</button>
     </form>
@@ -87,10 +91,12 @@
     </form>
     <div id="summary">
       <h1 class="head1">Your summary</h1>
+      <div id="incrementOutputs">
         <p id="numOfPizzas"></p>
         <p id="crustChosen"></p>
         <p id="toppingsChosen"></p>
       </div>
+    </div>
       <p id="costOutput"></p>
     </div>
 </body>
