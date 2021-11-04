@@ -4,7 +4,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
-    <link href="css/bootstrap-5.0.2-dist.zip">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <meta charset="utf-8">
     <title>EasyPizza</title>
@@ -19,7 +19,7 @@
     <div class="orderingSection">
       <form>
         <label for="pizza-size">Please select your pizza size:</label>
-        <select class="form-group">
+        <select class="form-control">
           <option>-- size of pizza --</option>
           <option value="200">Small</option>
           <option value="350">Medium</option>
@@ -27,7 +27,7 @@
         </select>
         <br>
         <label for="pizza-crust">Please select the kind of crust you want:</label>
-        <select class="form-group">
+        <select class="form-control">
           <option>-- type of crust --</option>
           <option value="300">Stuffed</option>
           <option value="250">Flat Bread</option>
@@ -45,6 +45,10 @@
         <input type="checkbox" name="toppings" value="200" /> Beef
         <input type="checkbox" name="toppings" value="210" /> Ham
         <input type="checkbox" name="toppings" value="110" /> Chicken
+        <br>
+        <button type="submit" id="orderButton" class="btn btn-primary">Order!</button>
+        <button type="submit" id="anotherOrderButton" class="btn btn-success">Another Order</button>
+      </form>
 
 
 
