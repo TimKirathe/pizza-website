@@ -42,7 +42,7 @@ $(document).ready(function() {
           pizzaToppingsNames.push("Green Pepper")
         }
         else if (pizzaToppings[i] === "70") {
-          pizzaToppingsNames.push("Extra Chees")
+          pizzaToppingsNames.push("Extra Cheese")
         }
         else if (pizzaToppings[i] === "90") {
           pizzaToppingsNames.push("Pineapple")
@@ -68,8 +68,18 @@ $(document).ready(function() {
       $("#orderNo").html('OrderNo: ' + orderNo + ' | ');
       $("#sizeOfPizza").html('Pizza size: ' + $("#pizzaSize option:selected").text() + ' | ');
       $("#crust").html('Crust: ' + $("#pizzaCrust option:selected").text() + ' | ');
-      $("#toppingsChosen").html('Toppings Chosen: ' + $.each($('input[name="toppings"]:checked').siblings().text()) + ' | ');
-      $("#totalAmount").html('Total: ' + total + ' | ');
+      $("#toppingsChosen").html('Toppings Chosen: ' + pizzaToppingsNames.join(", ") + ' | ');
+      $("#totalAmount").html('Total: ' + total);
+
+      $("#anotherOrderButton").click(function() {
+        let pizzaSize = $("#pizzaSize").val();
+        let pizzaCrust = $("#pizzaCrust").val();
+
+        $.each($('input[name="toppings"]:checked'), function() {
+          pizzaToppings.push($(this).val());
+        });
+        
+      });
 
       $("#orderSubmit")[0].reset();
   });
