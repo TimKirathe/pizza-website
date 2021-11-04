@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
     <link href="css/bootstrap-5.0.2-dist.zip">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <meta charset="utf-8">
@@ -15,19 +18,38 @@
     <hr>
     <div class="orderingSection">
       <form>
-        <label for="pizza-size">Please select your pizza size</label>
-        <select>
-          <option value="">Small</option>
-          <option value="">Medium</option>
-          <option value="">Large</option>
+        <label for="pizza-size">Please select your pizza size:</label>
+        <select class="form-group">
+          <option>-- size of pizza --</option>
+          <option value="200">Small</option>
+          <option value="350">Medium</option>
+          <option value="500">Large</option>
+        </select>
+        <br>
+        <label for="pizza-crust">Please select the kind of crust you want:</label>
+        <select class="form-group">
+          <option>-- type of crust --</option>
+          <option value="300">Stuffed</option>
+          <option value="250">Flat Bread</option>
+          <option value="200">Thin</option>
+          <option value="180">Thick</option>
+        </select>
+        <br>
+        <label for="pizza-toppings">Please select the type of toppings you would like:</label>
+        <input type="checkbox" name="toppings" value="100" /> Pepperoni
+        <input type="checkbox" name="toppings" value="80" /> Mushrooms
+        <input type="checkbox" name="toppings" value="150" />Bacon
+        <input type="checkbox" name="toppings" value="100" /> Green Pepper
+        <input type="checkbox" name="toppings" value="70" /> Extra Cheese
+        <input type="checkbox" name="toppings" value="90" /> Pineapple
+        <input type="checkbox" name="toppings" value="200" /> Beef
+        <input type="checkbox" name="toppings" value="210" /> Ham
+        <input type="checkbox" name="toppings" value="110" /> Chicken
 
 
 
 
-
-
-
-
+      </div>
 
 
 
