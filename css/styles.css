@@ -17,9 +17,20 @@ label {
   position: relative;
   left: 0.5rem;
 }
+#orderButton {
+  position: relative;
+  top: 0.5rem;
+  left: 1rem;
+  width: 6rem;
+}
 p {
   font-size: 1.2rem;
 }
 .welcome-paragraph {
   text-align: center;
+}
+
+#grandTotal {
+  position: absolute;
+  
 }
