@@ -32,5 +32,11 @@ p {
 
 #grandTotal {
   position: absolute;
-  
+
+}
+.priceDisplay {
+  font-size: 1.2rem;
+}
+#orderNo, #sizeOfPizza, #crust, #toppingsChosen, #totalAmount {
+  font-weight: 600;
 }
