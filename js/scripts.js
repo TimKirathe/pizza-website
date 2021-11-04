@@ -8,3 +8,15 @@ function Pizza(size, crust, toppings, orderNo, total) {
 }
 
 var deliveryCost = 200;
+
+
+// User Interface
+$(document).ready(function() {
+  $("#anotherOrderButton").hide();
+  $("#orderSubmit").submit(function(event) {
+    event.preventDefault();
+    $("#orderButton").click(function() {
+      let pizzaCost = $("#pizzaCrust")
+    });
+  });
+});

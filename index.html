@@ -17,17 +17,17 @@
   </div>
   <hr>
   <div class="orderingSection">
-    <form>
-      <label for="pizza-size">Please select your pizza size:</label>
-      <select class="form-control">
+    <form id="orderSubmit">
+      <label for="pizzaSize">Please select your pizza size:</label>
+      <select id="pizzaSize" class="form-control">
         <option>-- size of pizza --</option>
         <option value="200">Small</option>
         <option value="350">Medium</option>
         <option value="500">Large</option>
       </select>
       <br>
-      <label for="pizza-crust">Please select the kind of crust you want:</label>
-      <select class="form-control">
+      <label for="pizzaCrust">Please select the kind of crust you want:</label>
+      <select id="pizzaCrust" class="form-control">
         <option>-- type of crust --</option>
         <option value="300">Stuffed</option>
         <option value="250">Flat Bread</option>
@@ -36,15 +36,24 @@
       </select>
       <br>
       <label for="pizza-toppings">Please select the type of toppings you would like:</label>
-      <input type="checkbox" name="toppings" value="100" /> Pepperoni
-      <input type="checkbox" name="toppings" value="80" /> Mushrooms
-      <input type="checkbox" name="toppings" value="150" />Bacon
-      <input type="checkbox" name="toppings" value="100" /> Green Pepper
-      <input type="checkbox" name="toppings" value="70" /> Extra Cheese
-      <input type="checkbox" name="toppings" value="90" /> Pineapple
-      <input type="checkbox" name="toppings" value="200" /> Beef
-      <input type="checkbox" name="toppings" value="210" /> Ham
-      <input type="checkbox" name="toppings" value="110" /> Chicken
+      <br>
+      <input type="checkbox" name="toppings" value="100" /> <span class="displayedToppings">Pepperoni</span>
+      <br>
+      <input type="checkbox" name="toppings" value="80" /> <span class="displayedToppings">Mushrooms</span>
+      <br>
+      <input type="checkbox" name="toppings" value="150" /> <span class="displayedToppings">Bacon</span>
+      <br>
+      <input type="checkbox" name="toppings" value="100" /> <span class="displayedToppings">Green Pepper</span>
+      <br>
+      <input type="checkbox" name="toppings" value="70" /> <span class="displayedToppings">Extra Cheese</span>
+      <br>
+      <input type="checkbox" name="toppings" value="90" /> <span class="displayedToppings">Pineapple</span>
+      <br>
+      <input type="checkbox" name="toppings" value="200" /> <span class="displayedToppings">Beef</span>
+      <br>
+      <input type="checkbox" name="toppings" value="210" /> <span class="displayedToppings">Ham</span>
+      <br>
+      <input type="checkbox" name="toppings" value="110" /> <span class="displayedToppings">Chicken</span>
       <br>
       <button type="submit" id="orderButton" class="btn btn-primary">Order!</button>
       <button type="submit" id="anotherOrderButton" class="btn btn-success">Another Order</button>
