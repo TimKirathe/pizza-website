@@ -12,6 +12,9 @@ html body {
 label {
   font-size: 1.5rem;
 }
-label input {
+p {
   font-size: 1.2rem;
+}
+.welcome-paragraph {
+  text-align: center;
 }
