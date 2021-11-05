@@ -16,10 +16,11 @@ var deliveryCost = 200;
 
 // User Interface
 $(document).ready(function() {
-  $('#anotherOrderButton, .priceDisplay').hide();
+  $('#anotherOrderButton, .priceDisplay, .checkoutSection').hide();
 
   $("#orderButton").click(function() {
 
+    $(".checkoutSection").show();
 
       let pizzaSize = $("#pizzaSize").val();
       let pizzaCrust = $("#pizzaCrust").val();
@@ -61,6 +62,8 @@ $(document).ready(function() {
       var total = parseInt(pizzaSize) + parseInt(pizzaCrust) + parseInt(toppingsCost);
       var orderNo = 1;
 
+      grandTotal += total;
+
       $("#orderButton").hide();
       $("#anotherOrderButton").show();
       $(".priceDisplay").show();
@@ -69,10 +72,23 @@ $(document).ready(function() {
       $("#crust").html('Crust: ' + $("#pizzaCrust option:selected").text() + ' | ');
       $("#toppingsChosen").html('Toppings Chosen: ' + pizzaToppingsNames.join(", ") + ' | ');
       $("#totalAmount").html('Total: ' + total);
+      $("#grandTotal").html('Grand total: ' + grandTotal);
+
+      $("#checkoutButton").click(function() {
+        var delivery = prompt("Would you like your pizza(s) delivered? Y / n");
+
+        if (delivery === "Y") {
+          var locationInput = prompt("Please enter your location:");
+          alert("Dear Esteemed Customer, thank you for for order. Your delivery will be made to your location");
+        }
+        else if (delivery === "n") {
+          alert("Dear Esteemed Customer, thank you for your order. We look forward to serving you again soon");
+        }
+
+
 
       $("#anotherOrderButton").click(function() {
         orderNo = orderNo + 1;
-
 
         pizzaToppingsNames.splice(0, 9);
         pizzaToppings.splice(0, 9);
@@ -117,13 +133,17 @@ $(document).ready(function() {
         }
 
         var total = parseInt(pizzaSize) + parseInt(pizzaCrust) + parseInt(toppingsCost);
+        grandTotal += total;
 
         let anotherPizza = new Pizza(pizzaSize, pizzaCrust, orderNo, total);
 
         let anotherPizzaOrder = '<p>' + '<span id="orderNo">' + 'Order No: ' + anotherPizza.orderNo + ' | ' + '</span>' + '<span id="sizeOfPizza">' + 'Pizza Size: ' + $("#pizzaSize option:selected").text() + ' | ' + '</span>' + '<span id="crust">' + 'Pizza Crust: ' + $("#pizzaCrust option:selected").text() + ' | ' + '</span>' + '<span id="toppingsChosen">' + 'Toppings Chosen: ' + pizzaToppingsNames.join(", ") + ' | ' + '</span>' + '<span id="totalAmount">' + 'Total: ' + anotherPizza.total + '</span>' + '</p>'
-        $(".priceDisplay").append(anotherPizzaOrder);
-      });
 
-      //$("#orderSubmit")[0].reset();
+        $(".priceDisplay").append(anotherPizzaOrder);
+        $("#grandTotal").html('Grand total: ' + grandTotal);
+
+      });
+    });
+
   });
 });

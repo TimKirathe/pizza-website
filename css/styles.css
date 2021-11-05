@@ -4,6 +4,9 @@
   margin: 0;
   padding: 0;
 }
+:root {
+  --background:
+}
 html body {
   box-sizing: border-box;
   font-family: 'Titillium Web', sans-serif;
@@ -17,11 +20,20 @@ label {
   position: relative;
   left: 0.5rem;
 }
+input {
+  margin-left: 0.5rem;
+}
 #orderButton {
   position: relative;
   top: 0.5rem;
   left: 1rem;
   width: 6rem;
+}
+#anotherOrderButton {
+    position: relative;
+    top: 0.5rem;
+    left: 1rem;
+    width: 8rem;
 }
 p {
   font-size: 1.2rem;
@@ -32,7 +44,17 @@ p {
 
 #grandTotal {
   position: absolute;
-
+  height: 6rem;
+  width: 35%;
+  z-index: 0;
+  font-size: 1.2rem;
+}
+#checkoutButton {
+  position: relative;
+  z-index: 1;
+  left: 1rem;
+  top: 2.5rem;
+  margin-top: 1rem;
 }
 .priceDisplay {
   font-size: 1.2rem;
