@@ -2,7 +2,7 @@
 
 Pizza Ordering and Delivery Website
 
-https://postimg.cc/PCph2Ycj
+
 ## Technologies Used
 
 - Technologies used: `HTML, CSS, Bootstrap, JavaScript and jQuery`
