@@ -19,6 +19,7 @@ $(document).ready(function() {
   $('#anotherOrderButton, .priceDisplay, .checkoutSection, .orderingSection').hide();
 
   $("#startOrderButton").click(function() {
+    $(".orderingSection").show();
 
     $("#orderButton").click(function() {
 
@@ -77,17 +78,16 @@ $(document).ready(function() {
       $("#grandTotal").html('Grand total: ' + grandTotal);
 
       $("#checkoutButton").click(function() {
-        var delivery = prompt("Would you like your pizza(s) delivered? Y / n");
+        var delivery = prompt("Would you like your pizza(s) delivered? There will be an additional cost of ksh. 200 upon delivery - Y / n");
 
         if (delivery === "Y") {
+          grandTotal += deliveryCost
           var locationInput = prompt("Please enter your location:");
-          alert("Dear Esteemed Customer, thank you for for order. Your delivery will be made to your location");
+          alert("Dear Esteemed Customer, thank you for for order. Your delivery will be made to your location. Your total amount to be paid is " + grandTotal);
         }
         else if (delivery === "n") {
-          alert("Dear Esteemed Customer, thank you for your order. We look forward to serving you again soon");
+          alert("Dear Esteemed Customer, thank you for your order. We look forward to serving you again soon. Your total amount to be paid is " + grandTotal);
         }
-
-
 
         $("#anotherOrderButton").click(function() {
           orderNo = orderNo + 1;

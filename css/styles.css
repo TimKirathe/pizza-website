@@ -4,16 +4,59 @@
   margin: 0;
   padding: 0;
 }
+
 :root {
-  --background:
+  --background: rgba(0,191,255, 0.7);
+  --background-color: rgba(211,211,211, 0.3);
 }
+
 html body {
   box-sizing: border-box;
   font-family: 'Titillium Web', sans-serif;
   font-size: 62.5%;
 }
+
 label {
   font-size: 1.5rem;
+}
+
+.gallery {
+  background-color: var(--background-color);
+  padding-top: 3rem;
+  height: 140rem;
+}
+
+img {
+  height: 20rem;
+  width: 20rem;
+  margin-left: 1rem;
+  padding-top: 2rem;
+}
+
+img:hover {
+  height: 21rem;
+  width: 21rem;
+}
+
+.caption {
+  margin: 2rem;
+}
+.box {
+  text-align: center;
+  /*border: 0.3rem solid red;*/
+  width: 80%;
+  margin: auto;
+  margin-bottom: 3rem;
+  box-shadow: 1rem 1rem 1rem 1rem #DCDCDC;
+  height: 30rem;
+  border-radius: 0.3rem;
+  background-color: rgba(255,228,181, 0.5)
+}
+.one, .three {
+  transform: rotate(7deg);
+}
+.two, .four {
+  transform: rotate(-7deg);
 }
 .displayedToppings {
   font-size: 1.2rem;
@@ -40,8 +83,14 @@ p {
 }
 .welcome-paragraph {
   text-align: center;
+  background: var(--background);
+  height: 12rem;
+  padding-top: 2rem;
 }
 
+.orderingSection {
+  background-color: rgba(233,150,122, 0.7);
+}
 #grandTotal {
   position: absolute;
   height: 6rem;
