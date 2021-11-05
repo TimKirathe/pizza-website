@@ -2,6 +2,7 @@
 
 Pizza Ordering and Delivery Website
 
+https://i.postimg.cc/bwLJYR9s/pizza-website-screenshot.jpg
 
 ## Technologies Used
 
