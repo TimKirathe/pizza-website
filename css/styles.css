@@ -73,10 +73,11 @@ input {
   width: 6rem;
 }
 #anotherOrderButton {
-    position: relative;
-    top: 0.5rem;
-    left: 1rem;
-    width: 8rem;
+  position: relative;
+  top: 0.5rem;
+  left: 1rem;
+  width: 8rem;
+  margin-bottom: 1rem;
 }
 p {
   font-size: 1.2rem;
@@ -90,20 +91,22 @@ p {
 
 .orderingSection {
   background-color: rgba(233,150,122, 0.7);
+  padding-left: 1.5rem;
+  min-height: 43rem;
 }
 #grandTotal {
-  position: absolute;
-  height: 6rem;
+  position: relative;
+  height: 7rem;
   width: 35%;
   z-index: 0;
   font-size: 1.2rem;
+  display: block;
 }
 #checkoutButton {
   position: relative;
   z-index: 1;
   left: 1rem;
-  top: 2.5rem;
-  margin-top: 1rem;
+  bottom: 4.5rem;
 }
 .priceDisplay {
   font-size: 1.2rem;
