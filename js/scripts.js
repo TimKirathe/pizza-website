@@ -16,11 +16,13 @@ var deliveryCost = 200;
 
 // User Interface
 $(document).ready(function() {
-  $('#anotherOrderButton, .priceDisplay, .checkoutSection').hide();
+  $('#anotherOrderButton, .priceDisplay, .checkoutSection, .orderingSection').hide();
 
-  $("#orderButton").click(function() {
+  $("#startOrderButton").click(function() {
 
-    $(".checkoutSection").show();
+    $("#orderButton").click(function() {
+
+      $(".checkoutSection").show();
 
       let pizzaSize = $("#pizzaSize").val();
       let pizzaCrust = $("#pizzaCrust").val();
@@ -87,63 +89,64 @@ $(document).ready(function() {
 
 
 
-      $("#anotherOrderButton").click(function() {
-        orderNo = orderNo + 1;
+        $("#anotherOrderButton").click(function() {
+          orderNo = orderNo + 1;
 
-        pizzaToppingsNames.splice(0, 9);
-        pizzaToppings.splice(0, 9);
+          pizzaToppingsNames.splice(0, 9);
+          pizzaToppings.splice(0, 9);
 
-        let pizzaSize = $("#pizzaSize").val();
-        let pizzaCrust = $("#pizzaCrust").val();
+          let pizzaSize = $("#pizzaSize").val();
+          let pizzaCrust = $("#pizzaCrust").val();
 
 
-        $.each($('input[name="toppings"]:checked'), function() {
-          pizzaToppings.push($(this).val());
+          $.each($('input[name="toppings"]:checked'), function() {
+            pizzaToppings.push($(this).val());
+          });
+
+          for (var i=0; i<pizzaToppings.length; i++) {
+            if (pizzaToppings[i] === "100") {
+              pizzaToppingsNames.push("Pepperoni")
+            }
+            else if (pizzaToppings[i] === "80") {
+              pizzaToppingsNames.push("Mushrooms")
+            }
+            else if (pizzaToppings[i] === "150") {
+              pizzaToppingsNames.push("Bacon")
+            }
+            else if (pizzaToppings[i] === "100") {
+              pizzaToppingsNames.push("Green Pepper")
+            }
+            else if (pizzaToppings[i] === "70") {
+              pizzaToppingsNames.push("Extra Cheese")
+            }
+            else if (pizzaToppings[i] === "90") {
+              pizzaToppingsNames.push("Pineapple")
+            }
+            else if (pizzaToppings[i] === "200") {
+              pizzaToppingsNames.push("Beef")
+            }
+            else if (pizzaToppings[i] === "210") {
+              pizzaToppingsNames.push("Ham")
+            }
+            else if (pizzaToppings[i] === "110") {
+              pizzaToppingsNames.push("Chicken")
+            }
+            toppingsCost += parseInt(pizzaToppings[i]);
+          }
+
+          var total = parseInt(pizzaSize) + parseInt(pizzaCrust) + parseInt(toppingsCost);
+          grandTotal += total;
+
+          let anotherPizza = new Pizza(pizzaSize, pizzaCrust, orderNo, total);
+
+          let anotherPizzaOrder = '<p>' + '<span id="orderNo">' + 'Order No: ' + anotherPizza.orderNo + ' | ' + '</span>' + '<span id="sizeOfPizza">' + 'Pizza Size: ' + $("#pizzaSize option:selected").text() + ' | ' + '</span>' + '<span id="crust">' + 'Pizza Crust: ' + $("#pizzaCrust option:selected").text() + ' | ' + '</span>' + '<span id="toppingsChosen">' + 'Toppings Chosen: ' + pizzaToppingsNames.join(", ") + ' | ' + '</span>' + '<span id="totalAmount">' + 'Total: ' + anotherPizza.total + '</span>' + '</p>'
+
+          $(".priceDisplay").append(anotherPizzaOrder);
+          $("#grandTotal").html('Grand total: ' + grandTotal);
+
         });
-
-        for (var i=0; i<pizzaToppings.length; i++) {
-          if (pizzaToppings[i] === "100") {
-            pizzaToppingsNames.push("Pepperoni")
-          }
-          else if (pizzaToppings[i] === "80") {
-            pizzaToppingsNames.push("Mushrooms")
-          }
-          else if (pizzaToppings[i] === "150") {
-            pizzaToppingsNames.push("Bacon")
-          }
-          else if (pizzaToppings[i] === "100") {
-            pizzaToppingsNames.push("Green Pepper")
-          }
-          else if (pizzaToppings[i] === "70") {
-            pizzaToppingsNames.push("Extra Cheese")
-          }
-          else if (pizzaToppings[i] === "90") {
-            pizzaToppingsNames.push("Pineapple")
-          }
-          else if (pizzaToppings[i] === "200") {
-            pizzaToppingsNames.push("Beef")
-          }
-          else if (pizzaToppings[i] === "210") {
-            pizzaToppingsNames.push("Ham")
-          }
-          else if (pizzaToppings[i] === "110") {
-            pizzaToppingsNames.push("Chicken")
-          }
-          toppingsCost += parseInt(pizzaToppings[i]);
-        }
-
-        var total = parseInt(pizzaSize) + parseInt(pizzaCrust) + parseInt(toppingsCost);
-        grandTotal += total;
-
-        let anotherPizza = new Pizza(pizzaSize, pizzaCrust, orderNo, total);
-
-        let anotherPizzaOrder = '<p>' + '<span id="orderNo">' + 'Order No: ' + anotherPizza.orderNo + ' | ' + '</span>' + '<span id="sizeOfPizza">' + 'Pizza Size: ' + $("#pizzaSize option:selected").text() + ' | ' + '</span>' + '<span id="crust">' + 'Pizza Crust: ' + $("#pizzaCrust option:selected").text() + ' | ' + '</span>' + '<span id="toppingsChosen">' + 'Toppings Chosen: ' + pizzaToppingsNames.join(", ") + ' | ' + '</span>' + '<span id="totalAmount">' + 'Total: ' + anotherPizza.total + '</span>' + '</p>'
-
-        $(".priceDisplay").append(anotherPizzaOrder);
-        $("#grandTotal").html('Grand total: ' + grandTotal);
-
       });
-    });
 
+    });
   });
 });
